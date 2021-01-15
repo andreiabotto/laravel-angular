@@ -9,6 +9,15 @@ import { ClientsComponent } from './clients/clients.component';
 import { ClientsFormComponent } from './clients-form/clients-form.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductsFormComponent } from './products-form/products-form.component';
+import { BarchartComponent } from './barchart/barchart.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {LayoutModule} from '@angular/cdk/layout';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
+import { ChartsModule, ThemeService  } from 'ng2-charts';
+import { DoughnutchartComponent } from './doughnutchart/doughnutchart.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +27,23 @@ import { ProductsFormComponent } from './products-form/products-form.component';
     ClientsComponent,
     ClientsFormComponent,
     ProductsComponent,
-    ProductsFormComponent
+    ProductsFormComponent,
+    BarchartComponent,
+    DoughnutchartComponent       
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule, 
+    LayoutModule,   
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule,
+    ChartsModule,
   ],
-  providers: [],
+  providers: [
+    ThemeService 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
